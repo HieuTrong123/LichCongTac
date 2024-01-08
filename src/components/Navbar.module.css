@@ -1,0 +1,18 @@
+.nav{
+    display: flex;
+    gap: 80px;
+    background: url('../assets/red.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 10px 40px;
+    align-items: center;
+}
+.nav_logo{
+    height: 100px;
+}
+.nav_text{
+    color: #F4F700;
+    font-size: 35px;
+    font-weight: 500;
+}
