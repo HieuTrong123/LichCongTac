@@ -3,13 +3,10 @@ import classes from './Container.module.css'
 
 
 export default function Container(props) {
-
-    // const contentRefs = useRef(props.excelData.map(() => React.createRef()));
     let xCellIndex = 0;
     const contentRefs = useRef(null);
     if (props.excelData) {
         const sum_list = [].concat(...props.excelData.slice(1))
-        // props.excelData.slice(1).forEach((row) => contentRefs.current = row.map(() => React.createRef()))
         contentRefs.current = sum_list.map(() => React.createRef())
 
     }

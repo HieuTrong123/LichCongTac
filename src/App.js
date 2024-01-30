@@ -2,20 +2,9 @@ import React, { useState } from 'react';
 import './App.css';
 import Container from './components/Container';
 import Navbar from './components/Navbar';
-import Popup from './components/Popup';
 import * as XLSX from 'xlsx';
 
 function App() {
-  const [isPopupOpen, setPopupOpen] = useState(true);
-
-  // const openPopup = () => {
-  //   setPopupOpen(true);
-  // };
-
-  const closePopup = () => {
-    setPopupOpen(false);
-  };
-
   const [excelData, setExcelData] = useState(null);
 
   const handleFile = (e) => {
@@ -34,7 +23,6 @@ function App() {
         const dataArr = XLSX.utils.sheet_to_json(sheet, { header: 1 });
 
         setExcelData(dataArr);
-        setPopupOpen(false);
       };
 
       reader.readAsBinaryString(file);
@@ -42,16 +30,6 @@ function App() {
   };
   return (
     <>
-      {/* <button onClick={openPopup}>Mở Popup</button> */}
-      <Popup isOpen={isPopupOpen} onClose={closePopup}>
-        <input
-          type="file"
-          onChange={handleFile}
-          id="file"
-          className='inputfile'
-        />
-        <label htmlFor="file">Chọn file</label>
-      </Popup>
       <Navbar />
       <Container excelData={excelData} />
 
